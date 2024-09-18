@@ -22,8 +22,6 @@ export default function PostList({ setPage }) {
       {posts.map((post) => (
         <PostItem key={post.id} post={post} setPage={setPage} />
       ))}
-      <h2>Add New Post</h2>
-      <PostForm setRefresh={setRefresh} refresh={refresh} />
-    </div>
+       </div>
   );
 }

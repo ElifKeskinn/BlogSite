@@ -18,6 +18,8 @@ export default function PostForm({ setRefresh, refresh }) {
   };
 
   return (
+    <>
+    <h2>Share your own thoughts</h2>
     <form onSubmit={handleNewPost}>
       <input 
         type="text" 
@@ -30,7 +32,8 @@ export default function PostForm({ setRefresh, refresh }) {
         value={newPost.content}
         onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
       />
-      <button type="submit">Add Post</button>
+      <button type="submit">Post</button>
     </form>
+    </>
   );
 }
