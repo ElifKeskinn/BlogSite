@@ -8,6 +8,16 @@ export default function CommentList({ comments, setRefresh, refresh }) {
       }
       setRefresh(!refresh);
     };
+
+    const handleDislikeBtn = async (e) => {
+      e.preventDefault();
+      const commentId = e.target.value;
+      const response = await fetch(`http://localhost:3000/api/comments/${commentId}?dislike=true`);
+      if (!response.ok) {
+        return;
+      }
+      setRefresh(!refresh);
+    };
   
     return (
       <div>
@@ -15,7 +25,7 @@ export default function CommentList({ comments, setRefresh, refresh }) {
           <div key={i}>
             <span>{comment.content}</span>
             <button onClick={handleLikeBtn} value={comment.id}>Like {comment.likes}</button>
-            <button value={comment.id}>Dislike {comment.dislikes}</button>
+            <button onClick={handleDislikeBtn} value={comment.id}>Dislike {comment.dislikes}</button>
           </div>
         ))}
       </div>
