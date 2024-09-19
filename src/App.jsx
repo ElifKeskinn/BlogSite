@@ -18,7 +18,7 @@ export default function App() {
       <header>
         <button onClick={showHomePage} className="home-button">
         <FaHome /> Home        </button>
-        <button onClick={showPostList}>Post List</button>
+        <button onClick={showPostList}>Posts and Thoughts</button>
         <button onClick={showPostForm}>New Post</button>
       </header>
       <main>
