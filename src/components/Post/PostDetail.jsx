@@ -20,6 +20,7 @@ export default function PostDetail({ postId }) {
   }, [postId, refresh]);
 
   return (
+    <div className="post-detail-wrapper">
     <div className="post-detail-container">
       {isLoading ? (
         <div>Loading ...</div>
@@ -35,5 +36,7 @@ export default function PostDetail({ postId }) {
         </div>
       )}
     </div>
+    </div>
+    
   );
 }
